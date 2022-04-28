@@ -36,6 +36,23 @@ html {
     padding: clamp(1.0rem, 2vw, 2rem);
 }
 
+.menu-item {
+    cursor: pointer;
+}
+
+.empty-menu-item {
+    cursor: auto;
+}
+
+.menu-word {
+    letter-spacing: normal;
+    transition: all 0.1s;
+}
+
+.menu-word:hover {
+    letter-spacing: 1px;
+}
+
 h1 {
     font-size: clamp(1.5rem, 1vw, 2rem);
     display: inline;
@@ -64,4 +81,51 @@ h1 {
     width: 100%;
     height: 8px;
     background: linear-gradient(180deg, lightgrey, #e1e8ef);
+}
+
+#parent-grids {
+    height: calc(100% - 8px);
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+#content-side {
+    background-color: #e1e8ef;
+    gap: clamp(1.0rem, 1vw, 1.5rem);
+    padding: clamp(1.0rem, 1vw, 1.5rem);
+    padding-left: 0px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#content-side {
+    display: grid;
+    height: 100%;
+}
+
+.side-card {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#grids {
+    height: 100%;
+    background-color: #e1e8ef;
+    display: grid;
+    padding: clamp(1.0rem, 1vw, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1.0rem, 1vw, 1.5rem);
+}
+
+.card {
+    background-color: white;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+#grids > div > div {
+    width: 10px;
+    height: 100%;
+    background-color: #eead36;
+    border-radius: 10px 0px 0px 10px; 
 }
