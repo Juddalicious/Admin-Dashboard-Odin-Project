@@ -79,16 +79,13 @@ h1 {
 #content {
     grid-area: 2/2/3/3;
     background-color: #e1e8ef;
+    overflow-y: auto;
 }
 
-#shadow {
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(180deg, lightgrey, #e1e8ef);
-}
+
 
 #parent-grids {
-    height: calc(100% - 8px);
+    height: 100%;
     display: grid;
     grid-template-columns: 70% 30%;
 }
@@ -99,7 +96,7 @@ h1 {
     padding: 2.5rem 1rem 1rem 1rem;
     padding-left: 0px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(calc(50% - 0.5rem), max-content));
 }
 
 #content-side {
@@ -111,6 +108,7 @@ h1 {
     content: 'My Projects';
     position: absolute;
     top: calc(-1.5rem + -0.4vw);
+    width: 200px;
 }
 
 #section-title2::before {
@@ -131,6 +129,7 @@ h1 {
     display: grid;
     padding: 2.5rem 1rem 1rem 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, max-content));
     gap: clamp(1.0rem, 1vw, 1.5rem);
 }
 
@@ -157,4 +156,56 @@ h1 {
     height: 100%;
     background-color: var(--color4);
     border-radius: 10px 0px 0px 10px; 
+    position: absolute;
+}
+
+.card-content-wrapper {
+    display: grid;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.card-content {
+}
+
+.card-title {
+}
+
+.card-text {
+    padding-bottom: 0.5rem;
+    color: grey;
+}
+
+.card-buttons {
+    font-size: calc(14px + 0.5vw);
+    width: 100%;
+    text-align: right;
+    align-self: end;
+}
+
+.card-buttonz {
+    padding: 0.5rem 4%;
+    transform: rotate(0deg);
+    border-radius: 50%;
+}
+
+.card-buttons  :nth-child(1):hover {
+    transform: rotate(215deg);
+    transition: transform 600ms;
+    color: goldenrod;
+    cursor: pointer;
+}
+
+.card-buttons :nth-child(2):hover {
+    transform: rotate(360deg);
+    transition: transform 600ms;
+    color: darkgreen;
+    cursor: pointer;
+}
+
+.card-buttons :nth-child(3):hover {
+    transform: rotate(360deg);
+    transition: transform 600ms;
+    color: blue;
+    cursor: pointer;
 }
