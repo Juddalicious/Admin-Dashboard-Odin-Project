@@ -13,7 +13,7 @@ html {
 
 :root {
     font-family: Montserrat;
-    font-size: clamp(1.0rem, 1vw, 1.5rem);
+    font-size: calc(0.5rem + 0.25vw);
     --color1:#3D52AA; 
     --color2: #5E3BAB;
     --color3: #FAE043;
@@ -26,7 +26,7 @@ html {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: minmax(250px, 16vw) 1fr;
+    grid-template-columns: minmax(150px, 12vw) 1fr;
     grid-template-rows: minmax(150px, 10vh) 1fr;    
 }
 
@@ -37,11 +37,24 @@ html {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, 40px);
     color: white;
-    padding: clamp(1.0rem, 2vw, 2rem);
+    padding: clamp(1rem, 1vw, 2rem);
+    padding-top: 3rem;
+    align-items: center;
+}
+
+#logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid; 
+    padding: clamp(0.5rem, 1vw, 1rem);
+    margin: auto;
 }
 
 .menu-item {
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .empty-menu-item {
@@ -58,8 +71,15 @@ html {
 }
 
 h1 {
-    font-size: clamp(1.5rem, 1vw, 2rem);
-    display: inline;
+    font-size: calc(1.3rem + 0.20vw);
+}
+
+h2 {
+    font-size: calc(1.20rem + 0.20vw);
+}
+
+h3 {
+    font-size: calc(0.8rem + 0.20vw);
 }
 
 .fa-border-all {
@@ -80,14 +100,9 @@ h1 {
     grid-area: 2/2/3/3;
     background-color: #e1e8ef;
     overflow-y: auto;
-}
-
-
-
-#parent-grids {
     height: 100%;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 9fr minmax(300px, 1fr);
 }
 
 #content-side {
@@ -96,12 +111,17 @@ h1 {
     padding: 2.5rem 1rem 1rem 1rem;
     padding-left: 0px;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(calc(50% - 0.5rem), max-content));
+    grid-template-rows: repeat(auto-fit, minmax(max-content, calc(50% - 0.5rem)));
+    display: grid;
+    height: max-content;
 }
 
-#content-side {
-    display: grid;
-    height: 100%;
+#side-card1 {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+#side-card2 {
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 #section-title1::before {
@@ -109,18 +129,21 @@ h1 {
     position: absolute;
     top: calc(-1.5rem + -0.4vw);
     width: 200px;
+    font-size: calc(1rem + 0.25vw);
 }
 
 #section-title2::before {
     content: 'Announcements';
     position: absolute;
     top: calc(-1.5rem + -0.4vw);
+    font-size: calc(1rem + 0.25vw);
 }
 
 #section-title3::before {
     content: 'Trending';
     position: absolute;
     top: calc(-1.5rem + -0.4vw);
+    font-size: calc(1rem + 0.25vw);
 }
 
 #grids {
@@ -129,13 +152,13 @@ h1 {
     display: grid;
     padding: 2.5rem 1rem 1rem 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, max-content));
+    grid-template-rows: repeat(auto-fit, calc(100px + 6vw));
+    grid-auto-rows: 175px;
     gap: clamp(1.0rem, 1vw, 1.5rem);
 }
 
 .card {
     background-color: white;
-    max-height: 100%;
     border-radius: 10px;
     box-shadow: 0px 2px 5px grey;
     position: relative;
@@ -165,19 +188,13 @@ h1 {
     padding: 1.5rem;
 }
 
-.card-content {
-}
-
-.card-title {
-}
-
 .card-text {
     padding-bottom: 0.5rem;
     color: grey;
 }
 
 .card-buttons {
-    font-size: calc(14px + 0.5vw);
+    font-size: calc(13px + 0.2vw);
     width: 100%;
     text-align: right;
     align-self: end;
@@ -208,4 +225,80 @@ h1 {
     transition: transform 600ms;
     color: blue;
     cursor: pointer;
+}
+
+#trending-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1rf;
+}
+
+.trending-unit {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: calc(0rem + 0.5vw);
+    cursor: pointer;
+}
+
+.trending-unit:hover {
+    background: hsl(100, 5%, 97%);
+    border-radius: 20px;
+}
+
+.picture {
+    grid-area: 1/1/3/2;
+    width: 10px;
+    height: 10px;
+    height: calc(50px + 0.5vw);
+    width: calc(50px + 0.5vw);
+    border-radius: 50%;
+    padding: calc(1rem + 0.25vw);
+}
+
+#picture1 {
+    background: url(//unsplash.it/50/50);
+}
+
+#picture2 {
+    background: url(//unsplash.it/53/53);
+}
+
+#picture3 {
+    background: url(//unsplash.it/51/51);
+}
+
+#picture4 {
+    background: url(//unsplash.it/52/52);
+}
+
+.tag {
+    grid-area: 1/2/2/3;
+    padding-left: calc(1rem + 0.25vw);
+}
+
+.trending-sentence {
+    grid-area: 2/2/3/3;
+    padding-left: calc(1rem + 0.25vw);
+    color: grey;
+}
+
+#announce-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.announce-unit {
+    padding: calc(1rem + 0.5vw) calc(0rem + 0.5vw);
+    border-bottom: lightgrey 1px solid;
+}
+
+#announce-grid :nth-last-child(1) {
+    border-bottom: none;
+
+}
+
+.announce-text {
+    color: grey;
 }
