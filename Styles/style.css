@@ -26,7 +26,7 @@ html {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: minmax(150px, 12vw) 1fr;
+    grid-template-columns: calc(160px + 7vw) 1fr;
     grid-template-rows: minmax(150px, 10vh) 1fr;    
 }
 
@@ -47,7 +47,7 @@ html {
     justify-content: center;
     align-items: center;
     border: solid; 
-    padding: clamp(0.5rem, 1vw, 1rem);
+    padding: calc(0.5rem + 0.25vw) calc(2rem + 0.25vw);
     margin: auto;
 }
 
@@ -55,6 +55,7 @@ html {
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: calc(0.8rem + 0.25vw);
 }
 
 .empty-menu-item {
@@ -64,14 +65,16 @@ html {
 .menu-word {
     letter-spacing: normal;
     transition: all 0.1s;
+    padding-left: calc(0.8rem + 0.25vw)
 }
 
-.menu-word:hover {
-    letter-spacing: 1px;
+.menu-item:hover {
+    color: var(--color4);
+    
 }
 
 h1 {
-    font-size: calc(1.3rem + 0.20vw);
+    font-size: calc(1.75rem + 0.20vw);
 }
 
 h2 {
@@ -84,10 +87,6 @@ h3 {
 
 .fa-border-all {
     font-size: 1.85em;
-}
-
-.logo {
-    padding-right: clamp(1.0rem, 1vw, 1.5rem);
 }
 
 #header {
@@ -159,19 +158,19 @@ h3 {
 
 .card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0px 2px 5px grey;
     position: relative;
-    transition: 0.2s;
-}
-
-.card-top {
-    margin-top: 2rem;
+    transition: 0.1s;
 }
 
 .card:hover {
     box-shadow: 0px 4px 5px grey;
-    top: -2px
+    top: -1px
+}
+
+.card-top {
+    margin-top: 2rem;
 }
 
 .highlight {
@@ -201,7 +200,7 @@ h3 {
 }
 
 .card-buttonz {
-    padding: 0.5rem 4%;
+    padding: 3%;
     transform: rotate(0deg);
     border-radius: 50%;
 }
@@ -211,20 +210,19 @@ h3 {
     transition: transform 600ms;
     color: goldenrod;
     cursor: pointer;
+    background: hsl(100, 5%, 97%);
 }
 
 .card-buttons :nth-child(2):hover {
-    transform: rotate(360deg);
-    transition: transform 600ms;
     color: darkgreen;
     cursor: pointer;
+    background: hsl(100, 5%, 97%);
 }
 
 .card-buttons :nth-child(3):hover {
-    transform: rotate(360deg);
-    transition: transform 600ms;
     color: blue;
     cursor: pointer;
+    background: hsl(100, 5%, 97%);
 }
 
 #trending-grid {
@@ -258,19 +256,23 @@ h3 {
 }
 
 #picture1 {
-    background: url(//unsplash.it/50/50);
+    background: url(//unsplash.it/95/95);
+    background-size: cover;
 }
 
 #picture2 {
-    background: url(//unsplash.it/53/53);
+    background: url(//unsplash.it/93/93);
+    background-size: cover;
 }
 
 #picture3 {
-    background: url(//unsplash.it/51/51);
+    background: url(//unsplash.it/94/94);
+    background-size: cover;
 }
 
 #picture4 {
-    background: url(//unsplash.it/52/52);
+    background: url(//unsplash.it/96/96);
+    background-size: cover;
 }
 
 .tag {
